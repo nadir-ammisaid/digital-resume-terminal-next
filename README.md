@@ -1,4 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Terminal CV - Next.js Edition
+
+Terminal interactif développé avec Next.js 14, TypeScript et Tailwind CSS.
+
+## Technologies
+
+- **Next.js 14** - Framework React avec App Router
+- **TypeScript** - Typage statique
+- **Tailwind CSS** - Framework CSS utility-first
+- **Framer Motion** - Animations fluides
+- **React Hooks** - Gestion d'état moderne
+
+## Installation
+
+```bash
+git clone <repo-url>
+cd digital-resume-terminal-nextjs
+npm install
+```
+
+## Développement
+
+```bash
+npm run dev
+```
+
+Ouvre [http://localhost:3000](http://localhost:3000)
+
+## Build Production
+
+```bash
+npm run build
+npm start
+```
+
+## Structure
+
+```
+src/
+├── app/              # Pages Next.js (App Router)
+├── components/       # Composants React
+├── hooks/           # Hooks personnalisés
+├── lib/             # Utilitaires et logique métier
+└── styles/          # Styles personnalisés
+```
+
+## Fonctionnalités
+
+- Terminal interactif complet
+- Auto-complétion et historique
+- Animations avec Framer Motion
+- Design responsive
+- TypeScript strict
+- Hooks personnalisés
+- Gestion d'état optimisée
+
+## Commandes
+
+Tapez `help` dans le terminal pour voir toutes les commandes disponibles.
+
+## Déploiement
+
+Compatible avec Vercel, Netlify, et autres plateformes Next.js.
+
+```bash
+npm run build
+```
+
+<!-- This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
@@ -33,4 +101,4 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details. -->
