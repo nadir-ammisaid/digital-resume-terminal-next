@@ -22,7 +22,7 @@ export function formatSkillsTable(
   skills: Record<string, any>,
   category: string
 ): string {
-  let html = `${category}:\n`;
+  let html = `<span class="text-terminal-info">${category}:</span>\n`;
 
   Object.entries(skills).forEach(([skill, data]) => {
     const progressBar = createProgressBar(data.level);
@@ -71,16 +71,16 @@ export function formatExperienceList(experiences: Experience[]): string {
       ? `<span class="text-terminal-warning">${exp.status}</span>`
       : "";
 
-    html += `<span class="text-terminal-info">[${exp.period}]</span> <span class="text-terminal-green font-semibold">${exp.title}</span> @ ${exp.company}\n`;
+    html += `<span class="text-terminal-info">[${exp.period}]</span> ${exp.title} @ <span class="text-terminal-green">${exp.company}</span>\n`;
     html += `  📍 ${exp.location}\n`;
-    html += `  • ${exp.description}\n`;
+    html += `  ${exp.description}\n`;
 
     if (exp.technologies) {
-      html += `  • Tech: ${exp.technologies.join(", ")}\n`;
+      html += `  Tech: ${exp.technologies.join(", ")}\n`;
     }
 
     if (status) {
-      html += `  • ${status}\n`;
+      html += `  ${status}\n`;
     }
 
     html += "\n";
@@ -93,72 +93,19 @@ export function formatEducationList(education: Education[]): string {
   let html = "";
 
   education.forEach((edu) => {
-    html += `<span class="text-terminal-info">[${edu.period}]</span> <span class="text-terminal-green font-semibold">${edu.degree}</span>\n`;
+    html += `<span class="text-terminal-info">[${edu.period}]</span> <span class="text-terminal-green">${edu.degree}</span>\n`;
     html += `  📍 ${edu.school}, ${edu.location}\n`;
-    html += `  • ${edu.description}\n\n`;
+    html += `  ${edu.description}\n\n`;
   });
 
   return html;
 }
 
 export function generateMatrixRain(): void {
-  if (typeof window === "undefined") return;
-
-  const chars = "0123456789ABCDEF";
-  const columns = Math.floor(window.innerWidth / 20);
-
-  for (let i = 0; i < 50; i++) {
-    setTimeout(() => {
-      const char = document.createElement("div");
-      char.className =
-        "fixed text-terminal-green font-mono text-sm z-50 pointer-events-none animate-matrix-rain";
-      char.textContent = chars[Math.floor(Math.random() * chars.length)];
-      char.style.left = Math.floor(Math.random() * columns) * 20 + "px";
-      char.style.animationDelay = Math.random() * 2 + "s";
-
-      document.body.appendChild(char);
-
-      setTimeout(() => {
-        if (document.body.contains(char)) {
-          document.body.removeChild(char);
-        }
-      }, 3000);
-    }, i * 100);
-  }
-}
-
-export function playSound(soundName: string): void {
-  if (typeof window === "undefined") return;
-
-  try {
-    const audio = new Audio(`/assets/sounds/${soundName}.mp3`);
-    audio.volume = 0.3;
-    audio.play().catch(() => {});
-  } catch (error) {}
-}
-
-export function escapeHtml(text: string): string {
-  const div = document.createElement("div");
-  div.textContent = text;
-  return div.innerHTML;
-}
-
-export function isValidEmail(email: string): boolean {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return regex.test(email);
-}
-
-export function debounce<T extends (...args: any[]) => any>(
-  func: T,
-  wait: number
-): (...args: Parameters<T>) => void {
-  let timeout: NodeJS.Timeout;
-  return (...args: Parameters<T>) => {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => func(...args), wait);
-  };
+  // Matrix rain effect - placeholder function
+  console.log("Matrix rain effect triggered");
 }
 
 export function generateUniqueId(): string {
-  return Date.now().toString(36) + Math.random().toString(36).substr(2);
+  return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
 }

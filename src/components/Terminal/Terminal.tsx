@@ -118,12 +118,14 @@ export default function Terminal() {
       initial={{ scale: 0.8, opacity: 0, y: 20 }}
       animate={{ scale: 1, opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="w-full rounded-lg overflow-hidden"
+      className="terminal-container"
       style={{
+        width: "100%",
         maxWidth: "900px",
-        backgroundColor: "var(--terminal-secondary)",
+        background: "#1e1e3f",
+        borderRadius: "10px",
         boxShadow: "0 20px 60px rgba(0, 255, 0, 0.3)",
-        border: "1px solid rgba(0, 255, 0, 0.2)",
+        overflow: "hidden",
       }}
     >
       <TerminalHeader
@@ -134,12 +136,13 @@ export default function Terminal() {
 
       <div
         data-terminal-body
-        className="overflow-y-auto font-mono text-sm scrollbar-thin"
+        className="terminal-body"
         style={{
           padding: "20px",
           minHeight: "500px",
           maxHeight: "600px",
-          backgroundColor: "var(--terminal-secondary)",
+          overflowY: "auto",
+          backgroundColor: "#1e1e3f",
         }}
       >
         <TerminalOutput outputs={output} />

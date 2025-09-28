@@ -70,7 +70,7 @@ Bilingue français/anglais, je suis à l'aise dans des environnements techniques
     {
       title: "Développeur Full-Stack - Future Alternant",
       company: "Worldline",
-      period: "Janvier 2026 - 2029",
+      period: "Janvier 2026 - 2028",
       location: "Lyon, France",
       description:
         "Alternance de 3 ans dans le développement d'applications d'entreprise.",
